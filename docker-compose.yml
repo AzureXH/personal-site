@@ -1,6 +1,6 @@
 services:
   personal-site:
-    image: ghcr.io/azurexh/personal-site:latest
+    image: registry.cn-hangzhou.aliyuncs.com/azurexh/personal-site:latest
     restart: unless-stopped
     environment:
       - VIRTUAL_HOST=mkt77.site
