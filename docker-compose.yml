@@ -1,0 +1,13 @@
+services:
+  personal-site:
+    image: ghcr.io/azurexh/personal-site:latest
+    restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=mkt77.site
+      - VIRTUAL_PORT=3000
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
