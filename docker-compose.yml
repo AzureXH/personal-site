@@ -1,6 +1,6 @@
 services:
   personal-site:
-    image: registry.cn-hangzhou.aliyuncs.com/azurexh/personal-site:latest
+    image: personal-site:latest
     restart: unless-stopped
     environment:
       - VIRTUAL_HOST=mkt77.site
