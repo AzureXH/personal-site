@@ -17,4 +17,9 @@ export interface Project {
   tags: string[];
   url?: string;
   repo?: string;
+  /**
+   * When true, `url` is treated as an app-relative path — use Next.js <Link>
+   * for client-side navigation instead of an external <a>.
+   */
+  internal?: boolean;
 }

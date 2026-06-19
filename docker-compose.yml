@@ -5,9 +5,15 @@ services:
     environment:
       - VIRTUAL_HOST=mkt77.site
       - VIRTUAL_PORT=3000
+      - UPLOAD_DIR=/app/uploads
+    volumes:
+      - uploads:/app/uploads
     networks:
       - web
 
 networks:
   web:
     external: true
+
+volumes:
+  uploads:

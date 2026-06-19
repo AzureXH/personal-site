@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { projects } from "../data/projects";
 
 export default function Projects() {
@@ -37,7 +38,14 @@ export default function Projects() {
 
             {/* Links */}
             <div className="mt-5 flex gap-6 text-sm font-medium">
-              {project.url && (
+              {project.url && project.internal ? (
+                <Link
+                  href={project.url}
+                  className="text-fg hover:text-muted transition-colors"
+                >
+                  Visit →
+                </Link>
+              ) : project.url ? (
                 <a
                   href={project.url}
                   target="_blank"
@@ -46,7 +54,7 @@ export default function Projects() {
                 >
                   Visit →
                 </a>
-              )}
+              ) : null}
               {project.repo && (
                 <a
                   href={project.repo}
