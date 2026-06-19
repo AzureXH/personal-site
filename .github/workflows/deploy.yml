@@ -19,5 +19,10 @@ jobs:
             cd /srv/personal-site
             git pull origin main
             docker build -t personal-site:latest .
-            docker compose up -d
+            docker stop personal-site 2>/dev/null; docker rm personal-site 2>/dev/null
+            docker run -d --name personal-site --restart unless-stopped \
+              -e VIRTUAL_HOST=mkt77.site \
+              -e VIRTUAL_PORT=3000 \
+              --network web \
+              personal-site:latest
             docker image prune -f
