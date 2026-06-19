@@ -19,5 +19,5 @@ jobs:
             cd /srv/personal-site
             git pull origin main
             docker build -t personal-site:latest .
-            docker-compose up -d
+            docker compose up -d
             docker image prune -f
